@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JSFiddle s69cqyrh</title>
+
+  <style>
+    
+  </style>
+
+  
+</head>
+<body>
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>Omar John Flores | BSIT Student & Future Developer</title>
+
+    <meta name="description"
+        content="Omar John Flores is a BSIT student at Adamson University interested in programming, web development, technology, and software development.">
+
+    <meta name="author" content="Omar John Flores">
+
+    <meta name="keywords"
+        content="Omar John Flores, Omar Flores, BSIT Student, Adamson University, IT Student, Web Developer, Programmer">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #050505;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Animated background */
+        body::before {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: #00ff88;
+            filter: blur(180px);
+            opacity: 0.12;
+            top: -150px;
+            left: -150px;
+            z-index: -1;
+            animation: moveGlow 8s infinite alternate;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: #0077ff;
+            filter: blur(180px);
+            opacity: 0.12;
+            bottom: -150px;
+            right: -150px;
+            z-index: -1;
+            animation: moveGlow2 8s infinite alternate;
+        }
+
+        @keyframes moveGlow {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(150px, 100px);
+            }
+        }
+
+        @keyframes moveGlow2 {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(-150px, -100px);
+            }
+        }
+
+        /* Navigation */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(5, 5, 5, 0.75);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #00ff88;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00ff88;
+        }
+
+        /* Hero */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px 50px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            animation: fadeUp 1.2s ease;
+        }
+
+        .hello {
+            color: #00ff88;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 90px);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #00ff88;
+        }
+
+        .typing {
+            font-size: 22px;
+            color: #bbb;
+            min-height: 30px;
+        }
+
+        .description {
+            max-width: 650px;
+            margin: 25px auto;
+            color: #aaa;
+            line-height: 1.7;
+        }
+
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #00ff88;
+            color: #050505;
+        }
+
+        .primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+        }
+
+        .secondary {
+            border: 1px solid #444;
+            color: white;
+        }
+
+        .secondary:hover {
+            border-color: #00ff88;
+            color: #00ff88;
+            transform: translateY(-4px);
+        }
+
+        /* Sections */
+
+        section {
+            padding: 100px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+        }
+
+        .section-title p {
+            color: #888;
+            margin-top: 10px;
+        }
+
+        /* About */
+
+        .about {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about p {
+            color: #aaa;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* Cards */
+
+        .cards {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #00ff88;
+            box-shadow: 0 15px 40px rgba(0, 255, 136, 0.08);
+        }
+
+        .card h3 {
+            color: #00ff88;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #999;
+            line-height: 1.6;
+        }
+
+        /* Projects */
+
+        .project {
+            min-height: 220px;
+        }
+
+        .project span {
+            color: #777;
+            font-size: 13px;
+        }
+
+        /* Contact */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #999;
+            margin-bottom: 25px;
+        }
+
+        /* Footer */
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* Animation */
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 0.8s;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+            }
+
+            .typing {
+                font-size: 18px;
+            }
+
+            section {
+                padding: 80px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav>
+        <div class="logo">OJF.</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Hero -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="hello">Hello, I'm</div>
+
+            <h1>
+                Omar John <span>Flores</span>
+            </h1>
+
+            <div class="typing" id="typing"></div>
+
+            <p class="description">
+                A BSIT student at Adamson University who is interested
+                in programming, web development, technology, and software development.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#about" class="btn primary">
+                    Explore My Portfolio
+                </a>
+
+                <a href="#contact" class="btn secondary">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+
+    <section id="about">
+
+        <div class="section-title">
+            <h2>About Me</h2>
+            <p>Get to know me</p>
+        </div>
+
+        <div class="about reveal">
+
+            <p>
+                My name is Omar John Flores. I am a first-year
+                Bachelor of Science in Information Technology student
+                at Adamson University.
+            </p>
+
+            <br>
+
+            <p>
+                I am interested in learning programming, web development,
+                and different technologies. I enjoy creating projects
+                and improving my skills through practice and experience.
+            </p>
+
+            <br>
+
+            <p>
+                My goal is to become a skilled software developer
+                and continue learning more about technology.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Education -->
+
+    <section id="education">
+
+        <div class="section-title">
+            <h2>Education</h2>
+            <p>My academic journey</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card reveal">
+                <h3>Adamson University</h3>
+                <p>
+                    Bachelor of Science in Information Technology
+                </p>
+                <br>
+                <p>
+                    First Year College Student
+                </p>
+            </div>
+
+            <div class="card reveal">
+                <h3>Senior High School</h3>
+                <p>
+                    Nasugbu East Senior High School
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Skills -->
+
+    <section id="skills">
+
+        <div class="section-title">
+            <h2>Skills</h2>
+            <p>Technologies I am learning</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card reveal">
+                <h3>C#</h3>
+                <p>
+                    Learning console applications,
+                    arrays, methods, conditions, and loops.
+                </p>
+            </div>
+
+            <div class="card reveal">
+                <h3>HTML</h3>
+                <p>
+                    Creating semantic and structured websites.
+                </p>
+            </div>
+
+            <div class="card reveal">
+                <h3>CSS</h3>
+                <p>
+                    Designing responsive and modern web pages.
+                </p>
+            </div>
+
+            <div class="card reveal">
+                <h3>Arduino</h3>
+                <p>
+                    Creating simple hardware and automation projects.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects -->
+
+    <section id="projects">
+
+        <div class="section-title">
+            <h2>Projects</h2>
+            <p>Some of my projects and activities</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card project reveal">
+                <span>ARDUINO PROJECT</span>
+
+                <h3>Automatic Fish Feeder</h3>
+
+                <p>
+                    An Arduino-based project designed to
+                    automatically feed aquarium fish.
+                </p>
+            </div>
+
+
+            <div class="card project reveal">
+                <span>ARDUINO PROJECT</span>
+
+                <h3>Papervendo</h3>
+
+                <p>
+                    A coin-powered paper dispensing project
+                    created using Arduino and a servo motor.
+                </p>
+            </div>
+
+
+            <div class="card project reveal">
+                <span>WEB DEVELOPMENT</span>
+
+                <h3>Beautiful Spots in the Philippines</h3>
+
+                <p>
+                    A semantic HTML website featuring
+                    beautiful tourist destinations in the Philippines.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+
+    <section id="contact">
+
+        <div class="contact reveal">
+
+            <div class="section-title">
+                <h2>Let's Connect</h2>
+                <p>Thank you for visiting my website.</p>
+            </div>
+
+            <p>
+                You can contact me through my social media
+                or email.
+            </p>
+
+            <div class="buttons">
+
+                <!-- CHANGE THESE LINKS -->
+
+                <a href="mailto:omarjohnflores@gmail.com"
+                    class="btn primary">
+                    Email Me
+                </a>
+
+                <a href="https://github.com/oj03-commits"
+                    target="_blank"
+                    class="btn secondary">
+                    GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        © 2026 Omar John Flores.
+        All Rights Reserved.
+
+    </footer>
+
+
+    <!-- JavaScript -->
+
+    <script>
+
+        /* Typing Animation */
+
+        const texts = [
+            "BSIT Student",
+            "Aspiring Software Developer",
+            "Web Development Learner",
+            "Technology Enthusiast",
+            "Cybersecurity"
+        ];
+
+        let textIndex = 0;
+        let charIndex = 0;
+        let deleting = false;
+
+        const typing = document.getElementById("typing");
+
+        function typeEffect() {
+
+            const currentText = texts[textIndex];
+
+            if (!deleting) {
+
+                typing.textContent =
+                    currentText.substring(0, charIndex + 1);
+
+                charIndex++;
+
+                if (charIndex === currentText.length) {
+
+                    deleting = true;
+
+                    setTimeout(typeEffect, 1500);
+
+                    return;
+                }
+
+            } else {
+
+                typing.textContent =
+                    currentText.substring(0, charIndex - 1);
+
+                charIndex--;
+
+                if (charIndex === 0) {
+
+                    deleting = false;
+
+                    textIndex++;
+
+                    if (textIndex === texts.length) {
+                        textIndex = 0;
+                    }
+                }
+            }
+
+            setTimeout(typeEffect, deleting ? 50 : 100);
+        }
+
+        typeEffect();
+
+
+        /* Scroll Animation */
+
+        const reveals = document.querySelectorAll(".reveal");
+
+        function revealOnScroll() {
+
+            reveals.forEach(function (element) {
+
+                const windowHeight = window.innerHeight;
+
+                const elementTop =
+                    element.getBoundingClientRect().top;
+
+                if (elementTop < windowHeight - 100) {
+
+                    element.classList.add("active");
+
+                }
+
+            });
+
+        }
+
+        window.addEventListener("scroll", revealOnScroll);
+
+        revealOnScroll();
+
+    </script>
+
+</body>
+
+</html>
+
+  <script>
+    
+  </script>
+</body>
+</html>
